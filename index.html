@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Scientific Calculator</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="calc">
+  <header class="topbar">
+    <h1>Scientific Calculator</h1>
+    <button id="themeBtn" type="button" title="Toggle theme">🌙</button>
+  </header>
+
+  <section class="display">
+    <input id="expr" type="text" placeholder="0" autocomplete="off" spellcheck="false" aria-label="Expression" />
+    <div class="result-row">
+      <span id="memIndicator" class="mem" hidden>M</span>
+      <div id="result" class="result">0</div>
+      <button id="copyBtn" data-action="copy" type="button" title="Copy result">⧉</button>
+    </div>
+  </section>
+
+  <section class="memrow" aria-label="Memory">
+    <button data-action="mc" type="button">MC</button>
+    <button data-action="mr" type="button">MR</button>
+    <button data-action="mplus" type="button">M+</button>
+    <button data-action="mminus" type="button">M−</button>
+    <button data-action="ans" type="button">Ans</button>
+  </section>
+
+  <section id="keys" class="keys">
+    <button id="invBtn" data-action="inv" type="button" class="fn"><span class="lbl">INV</span></button>
+    <button id="modeBtn" data-action="mode" type="button" class="fn"><span class="lbl">DEG</span></button>
+    <button data-insert="(" type="button" class="fn"><span class="lbl">(</span></button>
+    <button data-insert=")" type="button" class="fn"><span class="lbl">)</span></button>
+    <button data-action="back" type="button" class="danger"><span class="lbl">⌫</span></button>
+
+    <button data-insert="sin(" data-inv="1" type="button" class="fn"><span class="lbl">sin(</span></button>
+    <button data-insert="cos(" data-inv="1" type="button" class="fn"><span class="lbl">cos(</span></button>
+    <button data-insert="tan(" data-inv="1" type="button" class="fn"><span class="lbl">tan(</span></button>
+    <button data-insert="pi" type="button" class="fn"><span class="lbl">π</span></button>
+    <button data-action="clear" type="button" class="danger"><span class="lbl">C</span></button>
+
+    <button data-insert="ln(" data-inv="1" type="button" class="fn"><span class="lbl">ln(</span></button>
+    <button data-insert="log(" data-inv="1" type="button" class="fn"><span class="lbl">log(</span></button>
+    <button data-insert="sqrt(" type="button" class="fn"><span class="lbl">√(</span></button>
+    <button data-insert="e" type="button" class="fn"><span class="lbl">e</span></button>
+    <button data-action="ce" type="button" class="danger"><span class="lbl">CE</span></button>
+
+    <button data-insert="^2" type="button" class="fn"><span class="lbl">x²</span></button>
+    <button data-insert="^" type="button" class="fn"><span class="lbl">xʸ</span></button>
+    <button data-insert="cbrt(" type="button" class="fn"><span class="lbl">∛(</span></button>
+    <button data-insert="recip(" type="button" class="fn"><span class="lbl">1/x</span></button>
+    <button data-insert="/" type="button" class="op"><span class="lbl">÷</span></button>
+
+    <button data-insert="7" type="button"><span class="lbl">7</span></button>
+    <button data-insert="8" type="button"><span class="lbl">8</span></button>
+    <button data-insert="9" type="button"><span class="lbl">9</span></button>
+    <button data-insert="*" type="button" class="op"><span class="lbl">×</span></button>
+    <button data-insert="!" type="button" class="fn"><span class="lbl">n!</span></button>
+
+    <button data-insert="4" type="button"><span class="lbl">4</span></button>
+    <button data-insert="5" type="button"><span class="lbl">5</span></button>
+    <button data-insert="6" type="button"><span class="lbl">6</span></button>
+    <button data-insert="-" type="button" class="op"><span class="lbl">−</span></button>
+    <button data-insert="%" type="button" class="fn"><span class="lbl">%</span></button>
+
+    <button data-insert="1" type="button"><span class="lbl">1</span></button>
+    <button data-insert="2" type="button"><span class="lbl">2</span></button>
+    <button data-insert="3" type="button"><span class="lbl">3</span></button>
+    <button data-insert="+" type="button" class="op"><span class="lbl">+</span></button>
+    <button data-insert="mod" type="button" class="fn"><span class="lbl">mod</span></button>
+
+    <button data-insert="0" type="button"><span class="lbl">0</span></button>
+    <button data-insert="." type="button"><span class="lbl">.</span></button>
+    <button data-insert="abs(" type="button" class="fn"><span class="lbl">|x|</span></button>
+    <button data-action="pm" type="button" class="fn"><span class="lbl">±</span></button>
+    <button data-action="equals" type="button" class="equals"><span class="lbl">=</span></button>
+  </section>
+
+  <section class="history-panel">
+    <div class="history-head">
+      <h2>History</h2>
+      <button id="clearHist" type="button">Clear</button>
+    </div>
+    <div id="history" class="history"></div>
+  </section>
+
+  <footer class="hint">Keyboard: 0-9 + − * / ^ % ! ( ) . Enter (=) · Esc (C)</footer>
+</main>
+<script src="calculator.js"></script>
+</body>
+</html>
